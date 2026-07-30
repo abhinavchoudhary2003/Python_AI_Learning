@@ -1,0 +1,70 @@
+pipenv means new way for us to combine package management(pip) with virtual environments(venv) basically it is combining the features of Pip and virtual env
+
+pip: pip is a way for us to install additional packages that allows us to add a ton of functionality that doesn't exist in the Python standard library so for example if you want to do some image manipulation then Python might not have the best tools available right out of the box but you can use pip to install the pillo library and use that to work 
+with images .
+
+virtualenv:  a virtual environment is a way for us to have a specific environment for each project or application that 
+we're building so for example you could have one application that runs off of Python 2.7 and Django 1.5 and then another project that runs with Python 3.7 and Django 2.1 so each of those projects would have their own version of Python and their own packages which is usually how you want to do it 
+some people put off learning virtual environments and just try to run every project using their global installation of Python and all the packages installed in one place but if you do it that way then as soon as you update to the next version of Python or update your packages then it could break some of your older applications that were running just fine so it's best to split those up using virtual environments
+
+
+So, before pipenv we used pip to handle package management and used virtual env to handle virtual environments
+ but now 
+with pipenV these can all be handled by one tool that simplifies the process 
+
+-------------------------------------------------------------------------
+pipfile: PIP file it's a pretty simple file that just shows how we can create a new environment from scratch and this file
+is also meant to be editable we could add packages in here and rerun the install command and it would install the packages that we added 
+Eg:
+[[source]]  tells from where that package have been installed
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]  tells the package name 
+requests = "*"
+
+[dev-packages]
+
+[requires] 
+python_version = "3.14"
+
+---------------------------------------------
+pipfile.lock : is a generated file that has more detailed information about our current environment now if we scroll down here then we can see that we have some hashes and for the packages that are installed
+we can see that we have more than just requests so this file even contains the dependencies that are installed when we installed the request library now not only that but it has the exact version of each of these packages that were installed so for example if we look at requests here then we can see that we have these hashes but then down here it also has the exact version so this is
+the good thing about having this pip file dot lock so this will give you a deterministic build and what I mean by that is that this lock file will absolutely give you the exact same environment every time and you only get a different build when you explicitly update the lock file and we'll see how to do this in just a bit so this gets us around the problem that we had before where I said that updating packages can break your project so the PIP file could 
+see a new version of your package and update them accordingly 
+--------------------------------
+Commands:
+1. to install pipenV : pip install pipenv
+
+2. To create a virtualenv and install requests pacages : pipenv install requests
+    first it checks for virtual env , if it doesn't exist then it create virtualenv and then install package(requests) and also create a pipfile and pipfile.lock 
+
+3. to active or run pipenv : pipenv shell 
+
+4. To deactivate the virtualenv : exit 
+
+
+5. To run any script or active venv : pipenv run script.py or pipenv run python (this will active venv and run python) , but of we write like only this pipenv run it will not active a venv
+
+5. to use any requirements.txt file of other project : pipenv install -r requirements.txt 
+        requirements.txt file contains dependencies(packages and version) of other projects and we get this file by using pip freeze commnd 
+6. To check dependencies(requirements.txtfile) : pipenv requirements or pipenv run pip freeze
+
+7. to remove or uninstall packages : pipenv uninstall <package_name>
+
+8. To remove virtualenv : pipenv --rm
+
+8. To create only virtualenv : pipenv install 
+
+9. to get path of venv : pipenv --venv
+
+10. to check the safety requirements of your packages : pipenv check
+
+11. TO check the dependencies of your packages(meams who is dependent on what ): pipenv graph
+
+12. To update your lock file  accordingly to your current dependencies before push coding to production : pipenv lock 
+
+13. to ignore your pipfile.lock before push to production: pipenv install --ignore-pipfile
+
