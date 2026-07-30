@@ -1,0 +1,36 @@
+What is venv and why  we use a virtualenv ?
+Ans: 
+environment so the purpose of a virtual
+environment is to have a space where we
+can install packages that are specific
+to a certain project so for example
+let's say that you have a lot of D Jango
+sites that use Django version 1 but
+you want to start using DJango version 2 
+on all of your newer projects well if
+you're just using your single global
+environment then when you update DJango
+to version 2 it could break some of
+your old projects that use DJango version
+one so we don't want all of our projects
+pointing to a single instance of DJango
+so each project should have its own
+packages separate from each other and
+that's what we use Virtual environments
+
+
+
+Commands :
+Here we are creating a venv of python 3.14.6
+1. To create a virtualenv in particualr project : python -m venv <Venv_name>
+2. TO activate that  venv : <Venv_name>\Script\activate.bat
+Now if you want to install anything  then that will be install only in this environment
+pip freeze: prints all the dependencies(packages&version) of this venv. suppose if someone wants to use this venv then he can look requirements.txt file where i put all  dependencies that are working in this Venv.
+3. exit from venv: deactivate 
+4. Delete a venv : rmdir <Venv_name> /s
+
+5. Suppose there is a new project(project_2) and he also want to use same packages and versions that we are using in project_1
+pip install -r requirements.txt
+
+
+
