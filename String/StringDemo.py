@@ -8,20 +8,20 @@
 # message2 = "Bobby's world" # 'Bobby\'s world'
 # print(message2)
 
-# # "" and '' are same here no one have extra functionality it justa matter how we use this 
-# message3 = '''hyy my name is Abhinav Choudhary
-# and I am from
-# Himachal 
-# Pradesh'''
-# print(message3)
+# # "" and '' are same here no one have extra functionality it just a matter how we use this 
+message3 = '''hyy my name is Abhinav Choudhary
+and I am from
+Himachal 
+Pradesh'''
+print(message3)  #'''__''' helps to print multiple lines 
 
 message = 'Hello world'
 print(len(message))
-print(message[0])
+print(message[0]) # print H
 print(message[0:5]) # print the character from oth index to 5th index but 5th index not inxluded 
 print(message.upper()) 
 print(message.lower())
-print(message.count('e')) # count the character in a string
+print(message.count('e')) # count the e  character in a string
 
 print(message.find('w')) # it will print the w index no 
 print(message.find('Hello')) # it will print the  index of first character where it is present So here H is at 0 
@@ -30,7 +30,7 @@ print(message.find('Hello')) # it will print the  index of first character where
 message1 = message.replace('Hello', 'hii') # new string object message1 created 
 print(message1)
 
-# concation of string 
+# concatation of string 
 greeting = 'Hello'
 name = 'Michael'
 # message = greeting +" "+ name 
@@ -39,3 +39,14 @@ message3 = f'{greeting.upper()},{name}' # use f it will provide us some extra fu
 print(message3)
 
 print(dir(message)) # it will tell us which methos we can use on this String
+
+
+
+greeting1 = "Hello "
+name1 = "World"
+print(greeting1 +" "+ name1)
+message4 = '{} {}'.format(greeting1,name1)
+print(message4)
+message5 = f'{greeting1} {name1}'
+print(message5)
+

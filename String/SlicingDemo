@@ -1,0 +1,37 @@
+# String slicing 
+# slic syntax is [start:end:step]
+message = "Hello world"
+#print(message[0])
+#print(message[0:5]) # 5th index not included here 
+
+# Note : In python , when we read String from starting it starts from index 0 and when we want to read string from end it starts from -1 
+#print(message[-4:])
+#print(message[-4:-1]) # here last index not included means -1 not included 
+
+#[start:end:step]
+print(message[0:11:2]) # step is 2 , so it starts from H and print at step 2  Hlowrd
+
+
+sample_url = 'http://coreyms.com'
+
+print(sample_url)
+
+# Reverse the String
+print(sample_url[::-1]) # :: , [start:end:step] here start is :, end is : and step is -1  
+                        # start : — it means  start empty → defaults to the beginning ,stop: — left empty → defaults to the end, step — -1 → move backwards, one character at a time
+s = 'python'
+print(s[5:2:-1])  # print 'noh' starts from n and end at t and -1 means read from reverse                  
+
+
+
+# Get the top level Domain
+print(sample_url[-4:])
+
+# print string without http://
+print(sample_url[7:])
+print(sample_url[-11:])
+
+# print the url without http:// or the top level domain(.com)
+
+print(sample_url[7:-4])
+

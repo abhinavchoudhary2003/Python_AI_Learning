@@ -1,0 +1,7 @@
+message1 = 'hello'
+message2 = 'buddy'
+print(message1+","+ message2)
+result1 = '{},{}'.format(message1,message2)
+result2 = '{1},{0}'.format(message1,message2)
+print(result1)
+print(result2)

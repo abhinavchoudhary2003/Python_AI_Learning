@@ -36,9 +36,9 @@ print(a is b) # false , here it compares the object id and both have different i
 
 
 print('-------------------------------------------')
-    # and returns true  when btoh conditions are true
+    # and returns true  when both conditions are true
     # or return true when alteast one condition should be True
-    # not make True-> False or False->True
+    # not makes True-> False or False->True
 user = 'Admin'
 logged_in = False
 if(user == 'Admin' and logged_in):
